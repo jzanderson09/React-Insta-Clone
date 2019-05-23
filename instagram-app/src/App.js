@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       headerText: 'Welcome to Instagram, this is my state message!',
       dummyData: DummyData,
-      currentTime: Date.now()
+      // currentTime: Date.now()
     };
   }
 
@@ -20,7 +20,9 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <SearchBar />
-          <PostContainer data={this.state} />
+          <PostContainer 
+            users={this.state.dummyData}
+          />
         </header>
       </div>
     );

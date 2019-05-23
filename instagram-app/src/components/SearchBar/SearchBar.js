@@ -12,12 +12,13 @@ const SearchBar = props => {
             </div>
             <input
                 type='text'
-                name='search-bar'
-                placeholder='Search'
+                name='searchBar'
+                className='search-bar'
+    placeholder='Search'
                 autoComplete='off' 
             />
             <div className='logo-container'>
-                <img className='compass-logo' src='https://icons8.com/icon/3772/compass-outline' alt='explore'></img>
+                <img className='compass-logo' src='https://img.icons8.com/material-outlined/2x/compass.png' alt='explore'></img>
                 <img className='heart-logo' src='https://img.icons8.com/ios/2x/hearts.png' alt='following'></img>
                 <img className='friends-logo' src='https://img.icons8.com/ios/2x/user-male-circle.png' alt='friends'></img>
             </div>
