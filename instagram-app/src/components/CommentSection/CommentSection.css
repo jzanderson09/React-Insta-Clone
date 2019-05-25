@@ -1,0 +1,14 @@
+.post-container .instagram-user-container .comments-container .comment {
+    border: 5px solid orange;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.post-container. .instagram-user-container .comments-container .comment .comment-user {
+    text-align: left;
+    margin-right: 1%;
+}
+
+.post-container .instagram-user-container .comments-container .comment .user-comment {
+    text-align: left;
+}

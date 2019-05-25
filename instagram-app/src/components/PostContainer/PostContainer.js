@@ -15,20 +15,30 @@ const PostContainer = props => {
             {props.users.map(user => {
                 return (
                     <div className='instagram-user-container'>
-                        <p key={`${user.id}-${Math.random()}`}>{user.username}</p>
-                        {/* <img src={item.thumbnailUrl} className='thumbnail' alt='user thumbnail'></img>
-                        <img src={item.imageUrl} className='portrait' alt='user portrait'></img> */}
-                        <p key={`${user.id}-${Math.random()}`}>{user.likes}</p>
-                        <p key={`${user.id}-${Math.random()}`}>{user.timestamp}</p>
-                        {user.comments.map(comment => {
-                            return (
-                                <div className='comment-container'>
-                                    <p>{comment.id}</p>
-                                    <p>{comment.username}</p>
-                                    <p>{comment.text}</p>
-                                </div>
-                            );
-                        })}
+                        <div className='user-container'>
+                            <img src={user.thumbnailUrl} className='thumbnail' alt='user thumbnail'></img>
+                            <p key={`${user.id}*${Math.random()}`} className='user'>{user.username}</p>
+                        </div>
+                        <img src={user.imageUrl} className='portrait' alt='user portrait'></img>
+                        <div className='reaction-container'>
+                            <img src="https://img.icons8.com/ios/50/000000/hearts.png" className='like icon' alt='like this post'></img>
+                            <img src="https://img.icons8.com/ios/50/000000/speech-bubble.png" className='comment icon' alt='comment'></img>
+                        </div>
+                        <p key={`${user.id}*${Math.random()}`} className='likes'>{user.likes} likes</p>
+                        <div className='comments-container'>
+                            {user.comments.map(comment => {
+                                return (
+                                    <CommentSection 
+                                        key={`${user.id}*${Math.random()}`}
+                                        username={comment.username}
+                                        comment={comment.text}
+                                    />
+                                );
+                            })}
+                        </div>
+                        <div className='timestamp-container'>
+                            <p key={`${user.id}*${Math.random()}`}>{user.timestamp}</p>
+                        </div>
                     </div>
                 );
             })}  

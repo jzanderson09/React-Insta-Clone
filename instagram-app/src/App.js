@@ -11,7 +11,6 @@ class App extends React.Component {
     this.state = {
       headerText: 'Welcome to Instagram, this is my state message!',
       dummyData: DummyData,
-      // currentTime: Date.now()
     };
   }
 
@@ -22,6 +21,7 @@ class App extends React.Component {
           <SearchBar />
           <PostContainer 
             users={this.state.dummyData}
+            postTimeStamp={this.postTimeStamp}
           />
         </header>
       </div>
