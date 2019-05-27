@@ -7,7 +7,6 @@ import PostContainer from './components/PostContainer/PostContainer';
 
 class App extends React.Component {
   constructor() {
-    console.log('Constructor invoked!');
     super();
     this.state = {
       headerText: 'Welcome to Instagram, this is my state message!',
@@ -16,18 +15,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('CDM invoked!');
     this.setState({dummyData: DummyData});
   }
 
+  addComment(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      console.log(event.target);
+    }
+    // this.setState({[event.target.name]: event.target.value});
+  }
+
   render() {
-    console.log('render invoked!');
     return (
       <div className="App">
         <header className="App-header">
           <SearchBar />
           <PostContainer 
             users={this.state.dummyData}
+            addComment={this.addComment}
           />
         </header>
       </div>

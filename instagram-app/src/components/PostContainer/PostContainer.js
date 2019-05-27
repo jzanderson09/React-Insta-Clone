@@ -28,7 +28,7 @@ const PostContainer = props => {
                                 return (
                                     <CommentSection 
                                         key={`${user.id} * ${Math.random()}`}
-                                        username={[4,6,3,2,1]}
+                                        username={comment.username}
                                         comment={comment.text}
                                     />
                                 );
@@ -37,6 +37,19 @@ const PostContainer = props => {
                         <div className='timestamp-container'>
                             <p key={`${user.id}*${Math.random()}`}>{user.timestamp}</p>
                         </div>
+                        <div className='add-comment-container'>
+                            <form>
+                                <input
+                                    key={user.id}
+                                    className="add-comment"
+                                    type="text"
+                                    name="text"
+                                    placeholder="Add a comment..."
+                                    autoComplete="off"
+                                    onSubmit={props.addComment}
+                                />
+                            </form>
+                        </div>
                     </div>
                 );
             })}  
@@ -44,5 +57,6 @@ const PostContainer = props => {
     );
 } 
 
+/* ~{this.state.dummyData.[id:{key}].comments.push}~ --> Adding comments  */
 
 export default PostContainer;
