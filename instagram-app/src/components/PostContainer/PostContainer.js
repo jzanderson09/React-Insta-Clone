@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import CommentSection from '../CommentSection/CommentSection';
 
@@ -11,7 +10,6 @@ instance of the CommentSection component.*/
 const PostContainer = props => {
     return (
         <div className='post-container'>
-            {/* <h1>{props.data.headerText || props.headerText}</h1> */}
             {props.users.map(user => {
                 return (
                     <div className='instagram-user-container'>
@@ -29,8 +27,8 @@ const PostContainer = props => {
                             {user.comments.map(comment => {
                                 return (
                                     <CommentSection 
-                                        key={`${user.id}*${Math.random()}`}
-                                        username={comment.username}
+                                        key={`${user.id} * ${Math.random()}`}
+                                        username={[4,6,3,2,1]}
                                         comment={comment.text}
                                     />
                                 );
@@ -46,12 +44,5 @@ const PostContainer = props => {
     );
 } 
 
-// PostContainer.propTypes = {
-//     postText: PropTypes.string
-// };
-
-// PostContainer.defaultProps = {
-//     postText: 'Welcome to Instagram, this is my defaultProps message!'
-// }
 
 export default PostContainer;

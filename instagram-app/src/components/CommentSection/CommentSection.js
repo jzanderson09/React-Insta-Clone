@@ -11,7 +11,7 @@ const CommentSection = props => {
     return (
         <div className='comment'>
             <strong><p key={props.key} className='comment-user'>{props.username}</p></strong>
-            <p key={props.key} className='user-comment'>{props.comment}</p>
+            <p key={props.key} className='user-comment'>&nbsp;{props.comment}</p>
         </div>
     );
 }

@@ -1,5 +1,4 @@
 .post-container .instagram-user-container .comments-container .comment {
-    border: 5px solid orange;
     display: flex;
     justify-content: flex-start;
 }

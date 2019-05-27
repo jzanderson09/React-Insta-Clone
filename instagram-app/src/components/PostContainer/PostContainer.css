@@ -1,5 +1,4 @@
 .post-container {
-    border: 5px solid purple;
     width: 60%;
     height: auto;
 }
@@ -39,7 +38,6 @@
 
 .post-container .instagram-user-container .reaction-container {
     display: flex;
-    border: 1px solid blue;
     width: 100%;
     margin: 1% 0 0 1.5%;
 }
@@ -67,7 +65,6 @@
 }
 
 .post-container .instagram-user-container .comments-container {
-    border: 5px solid yellow;
     width: 99%;
     margin-left: 0.5%;
     display: flex;
