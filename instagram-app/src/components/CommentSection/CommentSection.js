@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './CommentSection.css';
 
@@ -7,13 +8,73 @@ and renders a Comment component with the username of the poster as
 well as the post's text. Also should be an input box that allows
 users to submit a new comment for any post.*/
 
-const CommentSection = props => {
-    return (
-        <div className='comment'>
-            <strong><p key={props.key} className='comment-user'>{props.username}</p></strong>
-            <p key={props.key} className='user-comment'>&nbsp;{props.comment}</p>
-        </div>
-    );
+class CommentSection extends React.Component {
+    constructor(props) {
+        super();
+        this.state = {
+            user: props.user,
+            userComments: props.user.comments,
+            id: '',
+            username: 'jzanderson09',
+            text: '',
+            placeholder: 'Add a comment...'
+        }
+    }
+
+    clickHandler = event => {
+        this.setState({id: event.target.id});
+      }
+
+    addComment = event => {
+        event.preventDefault();
+        let newComment = {
+            id: this.state.id,
+            username: 'jzanderson09',
+            text: this.state.text
+        }
+        this.setState({
+            userComments: [...this.state.userComments, newComment],
+            id: '',
+            text: ''
+        });
+    }
+
+    changeHandler = event => {
+        this.setState({[event.target.name]: event.target.value });
+    }
+
+    render() {
+        return (        
+            <div className='comment-container'>
+                {this.state.userComments.map(comment => {
+                    return(
+                        <div className='comment'>
+                            <strong><p>{comment.username}</p></strong>
+                            <p>&nbsp;{comment.text}</p>
+                        </div>
+                    );
+                })}
+                <form 
+                    className='add-comment-form' onSubmit={this.addComment}>
+                    <input
+                        id={this.state.user.id}
+                        className='add-comment'
+                        type='text'
+                        name='text'
+                        placeholder={this.state.placeholder}
+                        autoComplete='off'
+                        onClick={this.clickHandler}
+                        onChange={this.changeHandler}
+                    />
+                    <button className='submit-button' onClick={this.addComment} ><strong>...</strong></button>   
+                </form>
+            </div>        
+        ); 
+    }
+}
+
+CommentSection.propTypes = {
+    user: PropTypes.object.isRequired
 }
 
 export default CommentSection;

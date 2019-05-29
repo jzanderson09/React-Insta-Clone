@@ -1,13 +1,30 @@
-.post-container .instagram-user-container .comments-container .comment {
-    display: flex;
-    justify-content: flex-start;
+.comment-container {
+    border: 5px solid black;
+    width: 100%;
 }
 
-.post-container. .instagram-user-container .comments-container .comment .comment-user {
+.comment-container .comment {
+    /* border: 5px solid purple; */
+    display: flex;
+    justify-content: flex-start;
     text-align: left;
     margin-right: 1%;
 }
 
-.post-container .instagram-user-container .comments-container .comment .user-comment {
-    text-align: left;
+.comment-container .add-comment-form {
+    /* border: 5px solid orange; */
+    width: 99.5%;
+    display: flex;
+}
+
+.comment-container .add-comment-form input {
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.comment-container .add-comment-form .submit-button {
+    width: 4%;
+    background: white;
+    color: black;
+    font-size: 1.6rem;
 }

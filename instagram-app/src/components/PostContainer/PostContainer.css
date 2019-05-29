@@ -66,30 +66,6 @@
     font-size: 1.4rem;
 }
 
-.post-container .instagram-user-container .comments-container {
-    /* border: 5px solid purple; */
-    width: 99%;
-    margin-left: 0.5%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-}
-
-.post-container .instagram-user-container .timestamp-container {
-    width: 100%;
-    text-align: left;
-    color: gray;
-}
-
-.post-container .instagram-user-container .add-comment-container {
+.post-container .instagram-user-container .commentSection-container {
     width: 100%;
 }
-
-.post-container .instagram-user-container .add-comment-container .add-comment {
-    width: 98%;
-    margin-bottom: 1%;
-    border-top: 1px solid gray;
-    border-bottom: none;
-    font-size: 1.6rem;
-}
-
