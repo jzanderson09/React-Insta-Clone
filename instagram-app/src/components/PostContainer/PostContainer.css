@@ -14,7 +14,6 @@
 }
 
 .post-container .instagram-user-container .user-container {
-    padding-left: 2%;
     display: flex;
     flex-flow: row no wrap;
 }
@@ -36,34 +35,6 @@
     display: block;
     width: 99%;
     margin-left: .5%;
-}
-
-.post-container .instagram-user-container .reaction-container {
-    display: flex;
-    width: 100%;
-    margin: 1% 0 0 1.5%;
-}
-
-.post-container .instagram-user-container .reaction-container .icon {
-    width: 25px;
-    height: 25px;
-    margin: auto 5px;
-}
-
-/* .post-container .instagram-user-container .reaction-container .like {
-} */
-
-.post-container .instagram-user-container .reaction-container .comment {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.post-container .instagram-user-container .likes {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: .5% 0 0 2.5%;
-    font-size: 1.4rem;
 }
 
 .post-container .instagram-user-container .commentSection-container {

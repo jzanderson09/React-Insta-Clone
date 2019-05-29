@@ -24,6 +24,7 @@ class App extends React.Component {
           <SearchBar />
           <PostContainer 
             dummyData={this.state.dummyData}
+            clickToLike={this.clickToLike}
           />
         </header>
       </div>

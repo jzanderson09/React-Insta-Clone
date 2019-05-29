@@ -19,14 +19,10 @@ const PostContainer = props => {
                             <p key={user.id} className='user'>{user.username}</p>
                         </div>
                         <img src={user.imageUrl} className='portrait' alt='user portrait'></img>
-                        <div className='reaction-container'>
-                            <img src="https://img.icons8.com/ios/50/000000/hearts.png" className='like icon' alt='like this post'></img>
-                            <img src="https://img.icons8.com/ios/50/000000/speech-bubble.png" className='comment icon' alt='comment'></img>
-                        </div>
-                        <p key={`${user.id} + ${Math.random()}`} className='likes'>{user.likes} likes</p>
                         <div className='commentSection-container'>
                             <CommentSection 
                                 user={user}
+                                likes={user.likes}
                             />
                         </div>
                         <div className='timestamp-container'>
