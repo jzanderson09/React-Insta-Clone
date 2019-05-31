@@ -13,6 +13,7 @@ const Login = props => {
                     value={props.username}
                     autoComplete='off'
                     placeholder='username'
+                    required
                     onChange={props.updateCredentials}
                 />
                 <input 
@@ -21,6 +22,7 @@ const Login = props => {
                     value={props.password}
                     autoComplete='off'
                     placeholder='password'
+                    required
                     onChange={props.updateCredentials}
                 />
                 <button onClick={props.loginOnSubmit}>Login</button>

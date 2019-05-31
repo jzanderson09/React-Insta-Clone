@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Login from '../../Login/Login';
 
@@ -34,17 +35,9 @@ const withAuthenticate = Component =>
             && localStorage.getItem('password') === 'password') {
                 this.setState({loggedIn: true});
             }
-            else if (localStorage.getItem('username') === 'jzanderson09'
-            && localStorage.getItem('password') !== 'password') {
-                alert('Sorry, wrong password!');
-            }
             else if (localStorage.getItem('username') !== 'jzanderson09'
-            && localStorage.getItem('password') === 'password') {
-                alert('Sorry, incorrect username!');
-            }
-            else if (localStorage.getItem('username') !== 'jzanderson09'
-            && localStorage.getItem('password') !== 'password') {
-                alert('Sorry, incorrect username and password!');
+            || localStorage.getItem('password') !== 'password') {
+                alert('Sorry, wrong username/password!');
             }
         }
 
@@ -78,6 +71,11 @@ const withAuthenticate = Component =>
                 );
             }
         }
+    }
+
+    withAuthenticate.propTypes = {
+        username: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired
     }
 
 
