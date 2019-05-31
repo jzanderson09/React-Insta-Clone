@@ -18,13 +18,13 @@ const SearchBar = props => {
                     className='search'
                     placeholder='Search'
                     autoComplete='off' 
-                    // onChange={props.handleInputChange}
                 />
             </form>
             <div className='logo-container'>
                 <img className='compass-logo' src='https://img.icons8.com/material-outlined/2x/compass.png' alt='explore'></img>
                 <img className='heart-logo' src='https://img.icons8.com/ios/2x/hearts.png' alt='following'></img>
                 <img className='friends-logo' src='https://img.icons8.com/ios/2x/user-male-circle.png' alt='friends'></img>
+                <button className='log-out-button' onClick={props.logOut}>Log Out</button>
             </div>
         </div>
     );

@@ -12,17 +12,12 @@ class App extends React.Component {
     super();
     this.state = {
       search: '',
-      dummyData: [],
-      dummyDataCopy: [] /*never modified,
-       replaces dummyData after search. Just read
-       and used for full data replacement.*/
-    };
+      dummyData: []
+    }
   }
 
   componentDidMount() {
-    this.setState({
-      dummyData: DummyData,
-      dummyDataCopy: DummyData});
+    this.setState({dummyData: DummyData});
   }
   
   render() {

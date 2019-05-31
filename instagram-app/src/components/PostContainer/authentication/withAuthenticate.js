@@ -2,7 +2,6 @@ import React from 'react';
 
 import Login from '../../Login/Login';
 
-
 /*HOC (Higher Order Component) */
 
 const withAuthenticate = Component =>
@@ -10,21 +9,76 @@ const withAuthenticate = Component =>
         constructor(props) {
             super(props);
             this.state = {
-                loggedIn: null
+                loggedIn: false,
+                username: '',
+                password: ''
             }
         }
 
         componentDidMount() {
+            if ( (localStorage.getItem('username') === 'jzanderson09')
+            && (localStorage.getItem('password') === 'password') ) {
+                this.setState({loggedin: true});
+            }
+        }
+
+        updateCredentials = event => {
+            event.preventDefault();
+            this.setState({[event.target.name]: event.target.value});
+            localStorage.setItem([event.target.name], event.target.value);
+        }
+
+        loginOnSubmit = event => {
+            event.preventDefault();
+            if (localStorage.getItem('username') === 'jzanderson09' 
+            && localStorage.getItem('password') === 'password') {
+                this.setState({loggedIn: true});
+            }
+            else if (localStorage.getItem('username') === 'jzanderson09'
+            && localStorage.getItem('password') !== 'password') {
+                alert('Sorry, wrong password!');
+            }
+            else if (localStorage.getItem('username') !== 'jzanderson09'
+            && localStorage.getItem('password') === 'password') {
+                alert('Sorry, incorrect username!');
+            }
+            else if (localStorage.getItem('username') !== 'jzanderson09'
+            && localStorage.getItem('password') !== 'password') {
+                alert('Sorry, incorrect username and password!');
+            }
+        }
+
+        logOut = event => {
+            event.preventDefault();
+            this.setState({
+                loggedIn: false,
+                username: '',
+                password: ''
+            });
         }
 
         render() {
+            if (this.state.loggedIn === true) {
                 return (
+                    //PostPage in this instance:
                     <Component
-                        dummyData={this.props.dummyData} 
+                        dummyData={this.props.dummyData}
+                        logOut={this.logOut}
                     />
-                ); 
+                );          
+            }
+            else if (this.state.loggedIn === false) {
+                return (
+                    <Login
+                        username={this.state.username}
+                        password={this.state.password}
+                        updateCredentials={this.updateCredentials}
+                        loginOnSubmit={this.loginOnSubmit}
+                    />
+                );
             }
         }
+    }
 
 
 export default withAuthenticate;

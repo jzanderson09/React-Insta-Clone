@@ -5,13 +5,11 @@
     display: flex;
     flex-flow: row no wrap;
     justify-content: space-between;
-    /* border: 5px solid gold; */
     font-family: 'Oleo Script', cursive;
 }
 
 .search-bar-container .logo-and-text-container {
     width: 33%;
-    /* border: 5px solid purple; */
     display: flex;
     align-items: center;
 }
@@ -47,7 +45,6 @@
 .search-bar-container .logo-container {
     display: flex;
     justify-content: flex-end;
-    /* border: 5px solid green; */
     width: 33%;
 }
 
@@ -67,4 +64,11 @@
     margin: auto 1% auto 3%;
     height: auto;
     width: 7%;
+}
+
+.search-bar-container .logo-container .log-out-button {
+    font-size: 1.2rem;
+    width: 14%;
+    height: 5vh;
+    margin: 2% 2% 0 1%;
 }

@@ -72,7 +72,7 @@ class CommentSection extends React.Component {
                     </div>
                     <p key={`${this.state.user.id} + ${Math.random()}`} className='likes'>{this.state.likes} likes</p>
                     {this.state.userComments.map(comment => {
-                        return(
+                        return (
                             <div className='comment'>
                                 <strong><p>{comment.username}</p></strong>
                                 <p>&nbsp;{comment.text}</p>
@@ -87,6 +87,7 @@ class CommentSection extends React.Component {
                             className='add-comment'
                             type='text'
                             name='text'
+                            value={this.state.text}
                             placeholder={this.state.placeholder}
                             autoComplete='off'
                             onClick={this.clickHandler}

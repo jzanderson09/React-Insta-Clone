@@ -6,7 +6,8 @@ import PostContainer from './PostContainer';
 const PostsPage = props => {
     return (
         <header className="App-header">
-            <SearchBar 
+            <SearchBar
+                logOut={props.logOut}
             />
             <PostContainer 
                 dummyData={props.dummyData}
