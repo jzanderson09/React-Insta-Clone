@@ -39,6 +39,4 @@ PostContainer.propTypes = {
     dummyData: PropTypes.arrayOf(PropTypes.object)
 };
 
-/* ~{this.state.dummyData.[id:{key}].comments.push}~ --> Adding comments  */
-
 export default PostContainer;

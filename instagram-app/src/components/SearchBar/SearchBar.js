@@ -10,13 +10,17 @@ const SearchBar = props => {
                 <h1 className='text-divider'>|</h1>
                 <h1>Instagram</h1>
             </div>
-            <input
-                type='text'
-                name='searchBar'
-                className='search-bar'
-    placeholder='Search'
-                autoComplete='off' 
-            />
+            <form className='search-bar'>
+                <input
+                    type='text'
+                    name='searchBar'
+                    value={props.userSearchText}
+                    className='search'
+                    placeholder='Search'
+                    autoComplete='off' 
+                    // onChange={props.handleInputChange}
+                />
+            </form>
             <div className='logo-container'>
                 <img className='compass-logo' src='https://img.icons8.com/material-outlined/2x/compass.png' alt='explore'></img>
                 <img className='heart-logo' src='https://img.icons8.com/ios/2x/hearts.png' alt='following'></img>

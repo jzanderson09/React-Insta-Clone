@@ -2,33 +2,34 @@ import React from 'react';
 import './App.css';
 
 import DummyData from './DummyData';
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
+import PostsPage from './components/PostContainer/PostsPage';
+import withAuthenticate from './components/PostContainer/authentication/withAuthenticate';
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      search: '',
+      dummyData: [],
+      dummyDataCopy: [] /*never modified,
+       replaces dummyData after search. Just read
+       and used for full data replacement.*/
     };
   }
 
   componentDidMount() {
-    this.setState({dummyData: DummyData});
+    this.setState({
+      dummyData: DummyData,
+      dummyDataCopy: DummyData});
   }
-
+  
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <SearchBar />
-          <PostContainer 
-            dummyData={this.state.dummyData}
-            clickToLike={this.clickToLike}
-          />
-        </header>
-      </div>
-    );
+    return ([<ComponentFromWithAuthenticate 
+        dummyData={this.state.dummyData} 
+      />
+    ]);
   }
 }
 
