@@ -1,0 +1,59 @@
+.user-container {
+    /* border: 5px solid crimson; */
+    width: 100%;
+}
+
+.user-container .comment-container {
+    /* border: 5px solid black; */
+    width: 100%;
+}
+
+.user-container .comment-container .icons {
+    width: 100%;
+    /* border: 5px solid green; */
+    text-align: left;
+}
+
+.user-container .comment-container .icons .icon {
+    width: 25px;
+    height: 25px;
+    margin: auto 5px;
+}
+
+.user-container .comment-container .comment-bubble {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.user-container .comment-container .likes {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: .5% 0 0 2.5%;
+    font-size: 1.4rem;
+}
+
+.user-container .comment-container .comment {
+    /* border: 5px solid purple; */
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.user-container .comment-container .add-comment-form {
+    /* border: 5px solid orange; */
+    width: 99.5%;
+    display: flex;
+}
+
+.user-container .comment-container .add-comment-form input {
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.user-container .comment-container .add-comment-form .submit-button {
+    width: 4%;
+    background: white;
+    color: black;
+    font-size: 1.6rem;
+}

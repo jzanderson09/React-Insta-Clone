@@ -1,0 +1,42 @@
+.post-container {
+    width: 60%;
+    height: auto;
+    margin-top: 1%;
+}
+
+.post-container .instagram-user-container {
+    border: 5px solid orange;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+}
+
+.post-container .instagram-user-container .user-container {
+    display: flex;
+    flex-flow: row no wrap;
+}
+
+.post-container .instagram-user-container .user-container .thumbnail {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-self: baseline;
+    margin-top: 10%;
+}
+
+.post-container .instagram-user-container .user-container .user {
+    display: inline-block;
+    padding-left: 7%;
+}
+
+.post-container .instagram-user-container .portrait {
+    display: block;
+    width: 99%;
+    margin-left: .5%;
+}
+
+.post-container .instagram-user-container .commentSection-container {
+    width: 100%;
+}
